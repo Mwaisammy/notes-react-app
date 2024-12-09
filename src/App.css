@@ -1,0 +1,9 @@
+.norm {
+  font-size: medium;
+  letter-spacing: 0.05em;
+}
+
+.completed {
+  color: lightgray;
+  text-decoration: line-through;
+}

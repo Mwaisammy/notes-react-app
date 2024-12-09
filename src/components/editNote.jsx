@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 
-const CreateModal = ({ addNote, onClose }) => {
-  const [input, setInput] = useState("");
+const EditNote = ({ editNote, onClose, task }) => {
+  const [input, setInput] = useState(task.task);
   // const [data, setData] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(input);
-    addNote(input);
+    editNote(input, task.id);
     onClose();
   };
   return (
@@ -37,7 +37,7 @@ const CreateModal = ({ addNote, onClose }) => {
             type={"submit"}
             className="bg-emerald-400 px-[20px] py-[10px] rounded-md text-white"
           >
-            Save
+            Edit
           </button>
         </div>
       </form>
@@ -45,4 +45,4 @@ const CreateModal = ({ addNote, onClose }) => {
   );
 };
 
-export default CreateModal;
+export default EditNote;
