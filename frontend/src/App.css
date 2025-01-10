@@ -7,3 +7,27 @@
   color: lightgray;
   text-decoration: line-through;
 }
+
+body {
+  overflow: hidden;
+  height: auto;
+  background-color: rgb(28, 27, 27);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsl(215, 28%, 21%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

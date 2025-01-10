@@ -18,6 +18,7 @@ const NotesCard = ({
     console.log(id);
     setCompleted((prev) => !prev);
     toggleCompleted(id);
+    alert("Marked as done 🙂");
     // toast("Marked as done 🙂");
   };
 
@@ -32,7 +33,7 @@ const NotesCard = ({
   };
 
   return (
-    <div className="flex items-start flex-col justify-between bg-white p-4 w-[200px] h-[220px] rounded-md tracking-wider">
+    <div className="flex items-start flex-col justify-between bg-gray-700 shadow-md text-white p-4  w-[350px] h-[220px] sm:w-[450px] md:w-[200px] rounded-md tracking-wider">
       <div className="flex flex-col space-y-3">
         <h2
           className={`${
@@ -45,7 +46,9 @@ const NotesCard = ({
         </h2>
         <p
           className={`${
-            completed ? "line-through text-gray-500 " : "decoration "
+            completed
+              ? "line-through text-gray-500 "
+              : "decoration  line-clamp-4"
           }`}
         >
           {myNote.content}

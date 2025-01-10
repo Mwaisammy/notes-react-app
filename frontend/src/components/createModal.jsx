@@ -49,6 +49,7 @@ const CreateModal = ({ onClose }) => {
       onClose();
       window.location.reload(); // Reload the page to show the new note
       localStorage.setItem("toastMessageShown", "true");
+      alert("Note was created 🙂");
     } catch (err) {
       console.error("Error submitting your note", err);
 
@@ -65,25 +66,29 @@ const CreateModal = ({ onClose }) => {
     <div className="fixed bg-black bg-opacity-60 top-0 left-0 right-0 bottom-0 z-50 flex justify-center items-center h-screen">
       <form
         onSubmit={handleSubmit}
-        className="border border-emerald-500 bg-black bg-opacity-95 rounded-md shadow-md p-[20px] w-[500px]"
+        className="border border-emerald-500 bg-black bg-opacity-95 rounded-md shadow-md flex flex-col justify-between  p-[20px] w-[400px] md:w-[500px] lg:w-[600px] text-white  "
       >
-        <input
-          type="text"
-          className="mb-4 w-full outline-none p-3 rounded-md"
-          placeholder="Create note title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <textarea
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          placeholder="Create note content"
-          className="w-full outline-none border border-gray-200 p-3 rounded-sm mb-4"
-        ></textarea>
+        <div className="">
+          <input
+            type="text"
+            className="mb-4 w-full outline-none  bg-gray-700 p-3 rounded-md "
+            placeholder="Create note title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <textarea
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            placeholder="Create note content"
+            className="w-full outline-none border  bg-gray-700 border-gray-700 p-3 rounded-sm mb-4 "
+          ></textarea>
+        </div>
 
         {/* Show the error message if the fields are invalid */}
         {error && (
-          <p className="bg-white text-rose-500 rounded-md p-4 mb-4">{error}</p>
+          <p className=" bg-gray-700 border border-rose-500 text-rose-500 rounded-md p-4 mb-4">
+            {error}
+          </p>
         )}
 
         <div className="flex justify-between items-center mt-5">

@@ -16,13 +16,13 @@ const MainWrapper = ({ data, showModal, setShowModal }) => {
   console.log(data);
 
   return (
-    <section className="">
+    <section className="flex items-center ">
       {!Array.isArray(data) || data.length === 0 ? (
         <p className="flex items-center justify-center text-center text-gray-400 tracking-wide ">
           Create/make a note
         </p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 m-4 gap-[20px] ">
+        <div className="grid grid-row-1 sm:grid-row-2 md:grid-cols-3 lg:grid-cols-4 m-4 gap-[20px] ">
           {showModal && <CreateModal onClose={() => setShowModal(false)} />}
           {deleteModal && (
             <DeleteModal idi={idi} onClose={() => setDeleteModal(false)} />

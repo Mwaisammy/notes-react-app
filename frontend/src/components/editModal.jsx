@@ -40,6 +40,7 @@ const EditModal = ({ onClose, idi }) => {
 
       axios.put(`http://localhost:5555/api/notes/${id}`, noteData).then(() => {
         toast("Note successfully edited!🙂");
+        alert("Note successfully edited!🙂");
         window.location.reload();
       });
     } catch (error) {
@@ -49,15 +50,15 @@ const EditModal = ({ onClose, idi }) => {
     onClose();
   };
   return (
-    <div className=" fixed bg-black bg-opacity-60 top-0 left-0 right-0 bottom-0 z-50 flex justify-center items-center h-screen">
+    <div className=" fixed bg-black bg-opacity-60 top-0 left-0 right-0 bottom-0 z-50 flex justify-center items-center h-screen text-white">
       <form
         onSubmit={handleSubmit}
         className="border bg-black bg-opacity-95 border-gray-200 rounded-md shadow-md p-[20px] w-[500px]"
       >
         <input
           type="text"
-          className="mb-4 w-full outline-none p-3 rounded-md"
-          placeholder="Create note title"
+          className="mb-4 w-full outline-none bg-gray-700 p-3 rounded-md"
+          placeholder="Edit note title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -66,8 +67,8 @@ const EditModal = ({ onClose, idi }) => {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           id=""
-          placeholder="Create note content"
-          className="w-full outline-none border border-gray-200 p-3 rounded-sm "
+          placeholder="Edit note content"
+          className="w-full outline-none bg-gray-700 border border-gray-700 p-3 rounded-sm "
         ></textarea>
 
         <div className="flex justify-between items-center mt-5">

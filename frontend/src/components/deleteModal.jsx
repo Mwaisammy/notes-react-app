@@ -12,6 +12,7 @@ const DeleteModal = ({ idi, onClose }) => {
     try {
       axios.delete(`http://localhost:5555/api/notes/${id}`).then(() => {
         toast("Note deleted 😭");
+        alert("Note deleted 😭");
         onClose();
         window.location.reload();
       });

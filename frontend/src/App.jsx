@@ -3,6 +3,7 @@ import Home from "./pages/home/home";
 import DeleteModal from "./components/deleteModal";
 import EditModal from "./components/editModal";
 import { Toaster } from "react-hot-toast";
+import "./App.css";
 
 const App = () => {
   // const { isLoaded, user } = useAuth();
@@ -18,7 +19,7 @@ const App = () => {
   //   return <SignIn />;
   // }
   return (
-    <div className="max-w-screen-lg mx-auto py-[30px] px-[20px] lg:px-0 overflow-y-hidden h-screen mb-[50px]">
+    <div className="  max-w-screen-lg mx-auto py-[30px] px-[20px] lg:px-0 overflow-hidden  min-h-screen mb-[50px]">
       <Toaster
         toastOptions={{
           duration: 4000,

@@ -3,8 +3,8 @@ import { Link } from "react-router";
 
 const SideBar = ({ onOpen }) => {
   return (
-    <main className="">
-      <div className="flex flex-col justify-between h-[550px] bg-black w-fit p-[20px]">
+    <main className=" ">
+      <div className="flex flex-col justify-between h-[510px]  bg-black w-fit p-[20px]">
         <div>
           <h2 className="text-white">Notes</h2>
         </div>
